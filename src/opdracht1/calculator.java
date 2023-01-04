@@ -36,140 +36,59 @@ public class calculator extends  JFrame {
         setVisible(true);
 
         rekenmachineFuncties functies=new rekenmachineFuncties();
-
-
-        a1Button.addActionListener(new ActionListener() {
+        ActionListener a=new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                functies.addNumber(1);
-                output.setText(functies.getOutputValue());
+                String value=e.getActionCommand();
+                if((value.charAt(0) >= '0' && value.charAt(0) <= '9')||(value.charAt(0) =='.')){
+                    functies.addNumber((value));
+                }
+                else if(value.matches("[+/-]")||value.charAt(0)=='*')
+                    functies.addSymbol(value);
 
-            }
-        });
 
-        a2Button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(2);
                 output.setText(functies.getOutputValue());
             }
-        });
+        };
 
-        a3Button.addActionListener(new ActionListener() {
+        a1Button.addActionListener(a);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(3);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        a2Button.addActionListener(a);
 
-        a4Button.addActionListener(new ActionListener() {
+        a3Button.addActionListener(a);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(4);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        a4Button.addActionListener(a);
 
-        a5Button.addActionListener(new ActionListener() {
+        a5Button.addActionListener(a);
 
+        a6Button.addActionListener(a);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(5);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        a7Button.addActionListener(a);
 
-        a6Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(6);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        a8Button.addActionListener(a);
 
-        a7Button.addActionListener(new ActionListener() {
+        a9Button.addActionListener(a);
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(7);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        a0Button.addActionListener(a);
 
-        a8Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(8);
-                output.setText(functies.getOutputValue());
-            }
-        });
-
-        a9Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(9);
-                output.setText(functies.getOutputValue());
-            }
-        });
-
-        a0Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addNumber(0);
-                output.setText(functies.getOutputValue());
-            }
-        });
+        button5.addActionListener(a);
         submitButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                output.setText(Float.toString(functies.calculate()));
+                output.setText(Double.toString(functies.calculate()));
 
             }
         });
-        buttonMultiply.addActionListener(new ActionListener() {
+        buttonMultiply.addActionListener(a);
+        buttonMinus.addActionListener(a);
+        buttonDivide.addActionListener(a);
+        buttonPlus.addActionListener(a);
+        clearButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                functies.addSymbol("*");
-                output.setText(functies.getOutputValue());
-            }
-        });
-        buttonMinus.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addSymbol("-");
-                output.setText(functies.getOutputValue());
-            }
-        });
-        buttonDivide.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addSymbol("/");
-                output.setText(functies.getOutputValue());
-            }
-        });
-        buttonPlus.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                functies.addSymbol("+");
-                output.setText(functies.getOutputValue());
+                functies.Reset();
             }
         });
     }
@@ -178,6 +97,8 @@ public class calculator extends  JFrame {
         calculator calc=new calculator();
 
     }
+
+
 
 
 }
