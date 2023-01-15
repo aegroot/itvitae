@@ -18,21 +18,32 @@ public class rekenmachineFuncties {
 
 
     public double calculate(){
-        double result=0.0;
-        double e1=Double.parseDouble(nr1);
-        double e2=Double.parseDouble(nr2);
+        if ((nr1.equals("")||nr2.equals("")||operand.equals(""))){
+            nr2=operand="";
 
+            nr1="Bad Equation";
+            return 0.0;
 
-
-        switch(operand){
-            case "*": result= (e1*e2); break;
-            case "/": result= (e1/e2); break;
-            case "+":result= (e1+e2); break;
-            case "-":result=(e1-e2); break;
         }
-        cache=result;
 
-        Reset();
+        double result=0.0;
+      double e1=Double.parseDouble(nr1);
+      double e2=Double.parseDouble(nr2);
+
+
+
+            switch(operand){
+                case "*": result= (e1*e2); break;
+                case "/": result= (e1/e2); break;
+                case "+":result= (e1+e2); break;
+                case "-":result=(e1-e2); break;
+            }
+            cache=result;
+            nr1=cache.toString();
+            clear();
+
+
+
 
         return  result;
     }
@@ -48,13 +59,14 @@ public class rekenmachineFuncties {
         }
 
 
-        //outputValue=new String(outputValue+c);
+
 
 
     }
 
 
     public void addNumber(String i){
+        if(cache!=null){nr2+=i;}
 
 
        if(!operand.equals("")){nr2=nr2+i;}
@@ -70,6 +82,7 @@ public class rekenmachineFuncties {
     public void Reset(){
 
         nr1=nr2=operand=""; cache=null;}
+        public  void clear(){nr1=nr2=operand="";}
 
 }
 

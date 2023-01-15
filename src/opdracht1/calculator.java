@@ -78,6 +78,7 @@ public class calculator extends  JFrame {
             public void actionPerformed(ActionEvent e) {
                 output.setText(Double.toString(functies.calculate()));
 
+
             }
         });
         buttonMultiply.addActionListener(a);
@@ -88,7 +89,20 @@ public class calculator extends  JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                functies.clear();
+                output.setText(functies.getOutputValue());
+
+
+            }
+        });
+        resetButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 functies.Reset();
+                output.setText(functies.getOutputValue());
+
+
             }
         });
     }
