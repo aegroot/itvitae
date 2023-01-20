@@ -12,9 +12,6 @@ public class Decrypter {
 
 
 
-
-
-
     public static  String decryptFile(String filePath,int key){
 
         StringBuilder resultStringBuilder = new StringBuilder();
@@ -27,10 +24,12 @@ public class Decrypter {
 
         String line=reader.readLine();
         while (line!=null){
+            //System.out.println(line);
 
-            line=reader.readLine();
+
             String enc=decryptLine(line,key);
-            resultStringBuilder.append(line).append("/n");
+            resultStringBuilder.append(enc).append("\n");
+            line=reader.readLine();
         }
 
         reader.close(); }
@@ -51,6 +50,7 @@ catch (IOException e) {
         int pos = 0, newPos = 0;
         boolean upper;
         for (char c : value.toCharArray()) {
+
             pos = upperAlphabets.indexOf(String.valueOf(c));
             if (pos == -1) {
                 if(!lowerAlphabets.contains(String.valueOf(c))){
@@ -64,8 +64,8 @@ catch (IOException e) {
                 upper = true;
             }
 
-            if (pos + toSkip > 25) {
-                newPos = (pos - toSkip) % 26;
+            if (pos - toSkip <0) {
+                newPos = 26-pos - toSkip;
             } else {
                 newPos = pos - toSkip;
             }
