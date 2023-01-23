@@ -1,4 +1,4 @@
-package opdracht2.crypter;
+package itvitae.opdracht2.crypter;
 
 import java.util.Arrays;
 import java.util.List;

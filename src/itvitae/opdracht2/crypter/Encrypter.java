@@ -1,6 +1,6 @@
-package opdracht2.crypter;
+package itvitae.opdracht2.crypter;
 
-import opdracht2.files.Reader;
+import itvitae.opdracht2.files.Reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

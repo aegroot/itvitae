@@ -1,0 +1,3 @@
+select SUM(Price) as total from Orderlines;
+
+//select distinct(CustomerId, Count(CustomerId))

@@ -1,4 +1,4 @@
-package opdracht2.files;
+package itvitae.opdracht2.files;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,7 +9,7 @@ public class Writer {
     public static void writeToFile(String data,String filename){
         File file=null;
 
-        String filepath="src/opdracht2/output"+"/"+filename;
+        String filepath="src/itvitae/opdracht2/output"+"/"+filename;
 
         file=new File(filepath);
         FileWriter writer=null;

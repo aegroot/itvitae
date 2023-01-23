@@ -1,11 +1,9 @@
-package opdracht2.Test;
-
-import java.nio.file.Path;
+package itvitae.opdracht2.Test;
 
 public class tester {
 
     public static void main(String[] args) {
-        String filePath="src/opdracht2/textfile";
+        String filePath="src/java.opdracht2/textfile";
 
         //System.out.println(Path.of(filePath));
 

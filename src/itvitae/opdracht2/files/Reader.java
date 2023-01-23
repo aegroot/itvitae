@@ -1,4 +1,4 @@
-package opdracht2.files;
+package itvitae.opdracht2.files;
 
 import java.io.BufferedReader;
 import java.io.IOException;

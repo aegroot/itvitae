@@ -1,0 +1,26 @@
+
+
+#gamecontainer{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+    background-color: darkblue;
+    height: 50%;
+    width: 50%;
+}
+#buttoncontainer{
+    position: absolute;
+    top: 75%;
+    height: 25%;
+    width: 100%;
+
+    border: black 5px;
+    background-color: lightblue;
+}
+
+#imagecontainer{
+
+    height: auto;
+    width: auto;
+}

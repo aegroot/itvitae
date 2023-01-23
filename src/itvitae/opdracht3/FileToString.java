@@ -1,13 +1,10 @@
-package opdracht3;
-
-import opdracht2.crypter.Alphabet;
+package itvitae.opdracht3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FileToString {
     public static String readFile(String path){

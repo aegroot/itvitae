@@ -1,0 +1,19 @@
+insert into VatCategories(Id,Description,Percentage)
+values (1,"Laag",9),(2,"Hoog",21);
+
+insert into Products(Id,Description,Price,VatCategoryId)
+values (1,"Moederbord",199.9,2), (2,"Processor",238.0,2),(3,"Videokaart",159.9,2),
+(4,"Harde schrijf",89.9,2),(5,"Monitor",379.9,2),(6,"Toetsenbord",20.0,2),
+(7,"Muis",9.95,2),(8,"c# voor dummies",15.99,1);
+
+insert into Employees(Id,Name) values
+(1,"Iris Ven"),
+(2,"Thuis Veen"),
+(3,"Stijn Jacobs"),
+(4,"Sander Klein");
+
+insert into Customers(Id,CustomerId,Orderdate,Deliverydate,EmployeeId) values
+(1,2,"27/04/2020","05/05/2020",2),
+(2,4,"29/11/2020","03/12/2020",1),
+(3,1,"")
+

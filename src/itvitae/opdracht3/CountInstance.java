@@ -1,7 +1,7 @@
-package opdracht3;
+package itvitae.opdracht3;
 
 
-import opdracht2.crypter.Alphabet;
+import itvitae.opdracht2.crypter.Alphabet;
 
 import java.util.ArrayList;
 import java.util.List;

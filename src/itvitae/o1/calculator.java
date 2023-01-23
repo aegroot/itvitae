@@ -1,4 +1,4 @@
-package opdracht1;
+package itvitae.o1;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

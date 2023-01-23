@@ -1,6 +1,6 @@
-package opdracht2.crypter;
+package itvitae.opdracht2.crypter;
 
-import opdracht2.files.Reader;
+import itvitae.opdracht2.files.Reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -65,7 +65,8 @@ catch (IOException e) {
             }
 
             if (pos - toSkip <0) {
-                newPos = 26-pos - toSkip;
+                newPos = 27-pos - toSkip;
+                System.out.println(newPos);
             } else {
                 newPos = pos - toSkip;
             }

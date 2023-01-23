@@ -1,0 +1,52 @@
+create table VATCategories(
+id int primary key,
+Description varchar(30),
+percentage int
+);
+
+create table Products(
+id int not null,
+Description varchar(50),
+Price float(15),
+VATCategoryId int,
+
+FOREIGN KEY (VATCategoryId) REFERENCES VATCategories(id)
+);
+
+create table Employees(
+id int primary key,
+Name varchar(30)
+
+);
+create table Customers(
+id int primary key,
+Name varchar(30),
+Discount int
+
+);
+
+create table Orders(
+id int primary key,
+CustomerId int not null,
+Orderdate Date,
+Deliverydate Date,
+EmployeeId int,
+
+foreign key (CustomerId) references Customers(id),
+foreign key (EmployeeId) references Employees(id)
+
+);
+create table Orderlines(
+id int primary key,
+OrderId int not null,
+ProductId int not null,
+Price float(30),
+Discount int,
+
+foreign key (OrderId) references Orders(id),
+foreign key (ProductId) references Products(id)
+
+);
+
+
+
